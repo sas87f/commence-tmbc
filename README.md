@@ -31,7 +31,8 @@ Biological organisms have developed sophisticated communication mechanisms to en
 <sup>2</sup>Department of Information Engineering, Università degli Studi di Firenze, Florence, Italy  
 <sup>3</sup>School of Computing, University of Nebraska–Lincoln, Lincoln, NE, USA
 
-## ⚙️ Installation
+
+## ⚙️ Installation
 1. Clone the repo
 ```bash
 git clone https://github.com/<OWNER>/<REPO>.git
