@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "commence"
+version = "0.1.0"
+description = ""
+authors = ["Alberto Archetti <alberto1.archetti@mail.polimi.it>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+scikit-learn = "^1.6.1"
+torch = "^2.6.0"
+pandas = "^2.2.3"
+scipy = "^1.15.2"
+tqdm = "^4.67.1"
+ray = "^2.44.1"
+black = {extras = ["jupyter"], version = "^25.1.0"}
+isort = "^6.0.1"
+jupyter = "^1.1.1"
+matplotlib = "^3.10.1"
+seaborn = "^0.13.2"
+ipywidgets = "^8.1.6"
+numba = "^0.61.2"
+ucimlrepo = "^0.0.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
