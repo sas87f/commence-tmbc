@@ -79,8 +79,8 @@ Dynamic Node Failures:  Nodes can become inactive at the beginning of an episode
 
 Observation Space: The agent perceives the environment through a dictionary-based observation space, providing comprehensive information about the network's state.
     
-    1.messages (spaces.Box): A continuous array representing the current concentration or state of chemical messages at each node. Its shape is (n_nodes, n_classes), where n_classes is the dimensionality of the chemical message.
-    2.active_nodes_mask (spaces.MultiBinary): A binary vector of shape (n_nodes,) indicating the operational status of each node (1 for active, 0 for failed).
+# 1.messages (spaces.Box): A continuous array representing the current concentration or state of chemical messages at each node. Its shape is (n_nodes, n_classes), where n_classes is the dimensionality of the chemical message.
+# 2.active_nodes_mask (spaces.MultiBinary): A binary vector of shape (n_nodes,) indicating the operational status of each node (1 for active, 0 for failed).
 
 
 Action Space
