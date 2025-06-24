@@ -5,6 +5,7 @@ A preliminary study of emergent molecular communication protocols learned by gra
 ## 📋 Table of Contents
 
 - [🦠 Emergent Molecular Communication](#-emergent-molecular-communication)
+  - [✏️ RL addition](#-RL-addition)
   - [📋 Table of Contents](#-table-of-contents)
   - [✏️ Abstract](#️-abstract)
   - [✉️ Authors](#️-authors)
@@ -15,6 +16,10 @@ A preliminary study of emergent molecular communication protocols learned by gra
 ## ✏️ Abstract
 
 Biological organisms have developed sophisticated communication mechanisms to enhance their adaptability and survival, ranging from molecular signaling to complex linguistic structures. Understanding the evolution of these mechanisms can provide insights into both biological processes and artificial communication system design. As a first attempt in this direction, a preliminary system based on Graph Neural Networks (GNNs) and molecular diffusion models is presented in this paper to observe the emergence of Molecular Communication (MC) protocols among artificial agents. In particular, these agents interact according to a Lewis-game framework by exchanging molecules that diffuse in a fluidic environment. In this framework, a sender encodes and transmits symbols to a destination with the help of intermediate relay nodes, subject to the stochastic behavior of diffusion-based MC, which affects message integrity. Each of these nodes can tune its internal parameters to influence communication, mimicking the evolution of biological organisms such as bacteria. Preliminary numerical results suggest that this system can learn to evolve an effective MC protocol. The findings highlight the potential of such a system for investigating emergent MC, possibly leading to a better understanding of molecular biological systems and the optimization of bio-based and bio-inspired networked systems.
+
+## ✏️ RL addition
+
+
 
 ## ✉️ Authors
 
