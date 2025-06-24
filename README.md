@@ -79,32 +79,32 @@ Dynamic Node Failures:  Nodes can become inactive at the beginning of an episode
 
 Observation Space: The agent perceives the environment through a dictionary-based observation space, providing comprehensive information about the network's state.
     
-    -messages (spaces.Box): A continuous array representing the current concentration or state of chemical messages at each node. Its shape is (n_nodes, n_classes), where n_classes is the dimensionality of the chemical message.
-    -active_nodes_mask (spaces.MultiBinary): A binary vector of shape (n_nodes,) indicating the operational status of each node (1 for active, 0 for failed).
+    1.messages (spaces.Box): A continuous array representing the current concentration or state of chemical messages at each node. Its shape is (n_nodes, n_classes), where n_classes is the dimensionality of the chemical message.
+    2.active_nodes_mask (spaces.MultiBinary): A binary vector of shape (n_nodes,) indicating the operational status of each node (1 for active, 0 for failed).
 
 
 Action Space
 The agent's decisions are represented by a spaces.MultiBinary vector of shape (n_nodes,). Each element in this vector corresponds to a specific node in the communication graph:
 
-    -A value of 1 for a node indicates that the agent "activates" or "strengthens" its relaying capabilities for the current message.
+    1. A value of 1 for a node indicates that the agent "activates" or "strengthens" its relaying capabilities for the current message.
 
-    -A value of 0 suggests the node's relaying is "deactivated" or "weakened".
+    2. A value of 0 suggests the node's relaying is "deactivated" or "weakened".
 
 These actions directly influence the relay_strength applied to messages at each node during the message passing process, allowing the agent to dynamically control signal propagation.
 
 Reward Function
     
-    -A base reward of +10.0 is given if the message, after propagation, leads to a correct classification of the original input data at the receiver node. This encourages successful information transfer. 
-    -A small penalty of -0.1 is applied for each node that the agent effectively "turns off" (sets its relay_strength to 0). This discourages unnecessary deactivation of potentially useful relay points and promotes network utilization. 
-    -A significant negative reward of -5.0 is imposed, and the episode terminates, if the receiver node itself fails. This strongly penalizes failures that directly impede the primary goal of communication. 
-    -A substantial bonus of +50.0 is awarded at the end of an episode if the final classification at the receiver is correct. This emphasizes the importance of end-to-end communication success over the entire duration of the message propagation.
+    1. A base reward of +10.0 is given if the message, after propagation, leads to a correct classification of the original input data at the receiver node. This encourages successful information transfer. 
+    2. A small penalty of -0.1 is applied for each node that the agent effectively "turns off" (sets its relay_strength to 0). This discourages unnecessary deactivation of potentially useful relay points and promotes network utilization. 
+    3. A significant negative reward of -5.0 is imposed, and the episode terminates, if the receiver node itself fails. This strongly penalizes failures that directly impede the primary goal of communication. 
+    4. A substantial bonus of +50.0 is awarded at the end of an episode if the final classification at the receiver is correct. This emphasizes the importance of end-to-end communication success over the entire duration of the message propagation.
 
 
 ## 🤖 RL Agent Training
 The RL agent is trained using the Proximal Policy Optimization (PPO) algorithm, a widely adopted and robust policy-gradient method implemented via the Stable Baselines3 library.
 
-1.Policy Architecture: Given the dictionary-based observation space, a MultiInputPolicy is employed, which is adept at handling structured input observations.
-2.Training Process: The agent learns by interacting with multiple parallel instances of the MolComEnv (configured via make_vec_env) over a specified number of total_timesteps (e.g., 1,000,000). During this process, it refines its policy to select optimal node activation strategies to maximize cumulative reward.
-3.Hyperparameters: Key hyperparameters such as learning_rate (e.g., 1e-4) and gamma (discount factor, e.g., 0.99) are configured to control the learning dynamics. These can be tuned for optimal performance based on experimentation.
-4.Logging: TensorBoard integration (tensorboard_log="./ppo_molcom_log/") facilitates comprehensive monitoring of the training progress, including various metrics like rewards, losses, and value estimates.
-5.Evaluation and Visualization: Following the training phase, the performance of the learned RL policy is rigorously evaluated over a set number of num_eval_episodes, 50 by default. 
+    1.Policy Architecture: Given the dictionary-based observation space, a MultiInputPolicy is employed, which is adept at handling structured input observations.
+    2.Training Process: The agent learns by interacting with multiple parallel instances of the MolComEnv (configured via make_vec_env) over a specified number of total_timesteps (e.g., 1,000,000). During this process, it refines its policy to select optimal node activation strategies to maximize cumulative reward.
+    3.Hyperparameters: Key hyperparameters such as learning_rate (e.g., 1e-4) and gamma (discount factor, e.g., 0.99) are configured to control the learning dynamics. These can be tuned for optimal performance based on experimentation.
+    4.Logging: TensorBoard integration (tensorboard_log="./ppo_molcom_log/") facilitates comprehensive monitoring of the training progress, including various metrics like rewards, losses, and value estimates.
+    5.Evaluation and Visualization: Following the training phase, the performance of the learned RL policy is rigorously evaluated over a set number of num_eval_episodes, 50 by default. 
