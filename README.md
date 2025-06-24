@@ -10,7 +10,8 @@ A preliminary study of emergent molecular communication protocols learned by gra
   - [✉️ Authors](#️-authors)
   - [🚀 Usage](#-usage)
   - [🧠 RL Portion](#-rl-portion)
-        - [🧪 MolComEnv](#-MolComEnv)
+    - [🧪 MolComEnv](#-MolComEnv)
+    - [🤖 RL Agent Training](#-rl-agent-training)
 ---
 
 ## ✏️ Abstract
