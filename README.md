@@ -75,20 +75,20 @@ One iteration includes:
 5. The message state of the receiver is tracked, it is used to calculated the reward for that iteration or step.
 6. State update, where the internal state including the current message and and active nodes are updated for the next step.
 
-Dynamic Node Failures:  Nodes can become inactive at the beginning of an episode or dynamically during a step.
+#### Dynamic Node Failures:  
+* Nodes can become inactive at the beginning of an episode or dynamically during a step.
 
-Observation Space: The agent perceives the environment through a dictionary-based observation space, providing comprehensive information about the network's state.
+#### Observation Space: 
+* The agent perceives the environment through a dictionary-based observation space, providing comprehensive information about the network's state.
+
 ##### 1. messages (spaces.Box): 
-A continuous array representing the current concentration or state of chemical messages at each node. Its shape is (n_nodes, n_classes), where n_classes is the dimensionality of the chemical message.
-    
-
-
+* A continuous array representing the current concentration or state of chemical messages at each node. Its shape is (n_nodes, n_classes), where n_classes is the dimensionality of the chemical message.
 ##### 2. active_nodes_mask (spaces.MultiBinary): 
-A binary vector of shape (n_nodes,) indicating the operational status of each node (1 for active, 0 for failed).
+* A binary vector of shape (n_nodes,) indicating the operational status of each node (1 for active, 0 for failed).
 
 
 #### Action Space:
-The agent's decisions are represented by a spaces.MultiBinary vector of shape (n_nodes,). Each element in this vector corresponds to a specific node in the communication graph:
+* The agent's decisions are represented by a spaces.MultiBinary vector of shape (n_nodes,). Each element in this vector corresponds to a specific node in the communication graph:
 
 1. A value of 1 for a node indicates that the agent "activates" or "strengthens" its relaying capabilities for the current message.
 
