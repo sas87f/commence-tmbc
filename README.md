@@ -9,7 +9,7 @@ A preliminary study of emergent molecular communication protocols learned by gra
   - [✏️ Abstract](#️-abstract)
   - [✉️ Authors](#️-authors)
   - [🚀 Usage](#-usage)
-  - [🧠 RL Portion](#rl-portion)
+  - [🧠 RL portion](#-RL-portion)
 ---
 
 ## ✏️ Abstract
@@ -53,6 +53,4 @@ Run the Jupyter notebook to train, evaluate, and collect metrics:
 ```bash
 jupyter lab commence_model.ipynb
 ```
-
-## 🧠 RL Portion
-Run the code and the RL portion should work
+## 🧠 RL portion
