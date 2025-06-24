@@ -57,23 +57,27 @@ git clone https://github.com/sas87f/commence-tmbc.git
 cd commence-tmbc
 
 Compile LaTeX Code
+
 Create Conda environment:
 
 conda env create -f environment.yml
 conda activate commence
 
 Compile LaTeX Code
+
 Install Python dependencies:
 
 poetry install
 
 Compile LaTeX Code
+
 🚀 Usage
 Run the Jupyter notebook to train, evaluate, and collect metrics:
 
 jupyter lab commence_model.ipynb
 
 Compile LaTeX Code
+
 🧠 Reinforcement Learning for Adaptive Communication
 To enhance the adaptability of the molecular communication system in dynamic environments, a Reinforcement Learning (RL) framework has been integrated. The RL agent learns to make decisions that influence message propagation, aiming to optimize communication accuracy even when network conditions change (e.g., due to node failures). This setup allows the system to mimic the adaptive behavior observed in biological organisms.
 
