@@ -55,3 +55,4 @@ jupyter lab commence_model.ipynb
 ```
 
 ## 🧠 RL Portion
+Run the code and the RL portion should work
