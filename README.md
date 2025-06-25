@@ -58,6 +58,7 @@ jupyter lab commence_model.ipynb
 
 ## 🧠 RL Portion
 Reinforcement Learning for Adaptive Communication
+
 To enhance the adaptability of the molecular communication system in dynamic environments, a Reinforcement Learning (RL) framework has been integrated. The RL agent learns to make decisions that aim to optimize communication accuracy even when network conditions change such as the occurance of node failures.
 
 ## 🧪 MolComEnv
