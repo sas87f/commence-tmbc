@@ -114,4 +114,4 @@ The RL agent is trained using the Proximal Policy Optimization (PPO) algorithm, 
 
 4. Logging: TensorBoard integration (tensorboard_log="./ppo_molcom_log/") handles monitoring of the training progress, including various metrics like rewards, losses, and value estimates.
 
-5. Evaluation and Visualization: Following the training phase, the performance of the learned RL policy is evaluated over a set number of num_eval_episodes, 50 by default. 
+5. Evaluation and Visualization: Following the training phase, the performance of the learned RL policy is evaluated over a set number of episodes. 
