@@ -58,7 +58,7 @@ jupyter lab commence_model.ipynb
 
 ## 🧠 RL Portion
 Reinforcement Learning for Adaptive Communication
-To enhance the adaptability of the molecular communication system in dynamic environments, a Reinforcement Learning (RL) framework has been integrated. The RL agent learns to make decisions that influence message propagation, aiming to optimize communication accuracy even when network conditions change (e.g., due to node failures). This setup allows the system to mimic the adaptive behavior observed in biological organisms.
+To enhance the adaptability of the molecular communication system in dynamic environments, a Reinforcement Learning (RL) framework has been integrated. The RL agent learns to make decisions that aim to optimize communication accuracy even when network conditions change such as the occurance of node failures.
 
 ## 🧪 MolComEnv
 A custom environment using the Gymnasium libray, it simulates a molecular communication channel with dynamically changing conditions.
@@ -100,11 +100,11 @@ One iteration includes:
 1. A base reward of +10.0 is given if the message, after propagation, leads to a correct classification of the original input data at the receiver node. This encourages successful information transfer. 
 2. A small penalty of -0.1 is applied for each node that the agent effectively "turns off" (sets its relay_strength to 0). This discourages unnecessary deactivation of potentially useful relay points and promotes network utilization. 
 3. A significant negative reward of -5.0 is imposed, and the episode terminates, if the receiver node itself fails. This strongly penalizes failures that directly impede the primary goal of communication. 
-4. A substantial bonus of +50.0 is awarded at the end of an episode if the final classification at the receiver is correct. This emphasizes the importance of end-to-end communication success over the entire duration of the message propagation.
+4. A substantial bonus of +50.0 is awarded at the end of an episode if the final classification at the receiver is correct. This is to emphasizes the importance of end-to-end communication success over the entire duration of the message propagation.
 
 
 ## 🤖 RL Agent Training
-The RL agent is trained using the Proximal Policy Optimization (PPO) algorithm, a widely adopted and robust policy-gradient method implemented via the Stable Baselines3 library.
+The RL agent is trained using the Proximal Policy Optimization (PPO) algorithm, policy-gradient method implemented with the Stable Baselines3 library.
     
 1. Policy Architecture: Given the dictionary-based observation space, a MultiInputPolicy is employed, which is good at handling structured input observations.
     
