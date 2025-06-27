@@ -107,7 +107,7 @@ One iteration includes:
 ## 🤖 RL Agent Training
 The RL agent is trained using the Proximal Policy Optimization (PPO) algorithm, policy-gradient method implemented with the Stable Baselines3 library.
     
-1. Policy Architecture: Given the dictionary-based observation space, a MultiInputPolicy is employed, which is good at handling structured input observations.
+1. Policy Architecture: Given the dictionary-based observation space, a MultiInputPolicy is employed.
     
 2. Training Process: The agent learns by interacting with multiple parallel instances of the MolComEnv (4 by default) over a specified number of total_timesteps (1,000,000 by default). During this process, it refines its policy to select optimal node activation strategies to maximize cumulative reward.
     
